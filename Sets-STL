@@ -1,0 +1,39 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int Q, a, b;
+    cin >> Q;
+    set <int> s;
+    for(int i = 0; i < Q; i++){
+        cin >> a >> b;
+        if(a == 1){
+            s.insert(b);
+        }
+        else if( a == 2){
+            s.erase(b);
+        }
+        else if (a == 3){
+            set<int>::iterator r = s.find(b);
+            set<int>::iterator end = s.end();
+            if( r != end)
+                cout << "Yes";
+            else 
+                cout <<"No";
+            cout << endl;
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+
+//  : Add an element  to the set.
+ // : Delete an element  from the set. (If the number  is not present in the set, then do nothing).
+ // : If the number  is present in the set, then print "Yes"(without quotes) else print "No"(without quotes).
+
